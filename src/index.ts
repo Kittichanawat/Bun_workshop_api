@@ -5,7 +5,7 @@ import { UserController } from "./controllers/UserController";
 import { DeviceController } from "./controllers/DeviceController";
 import { DepartmentController } from "./controllers/DepartmentController";
 import { SectionController } from "./controllers/SectionController";
-
+import { RepairRecordController } from "./controllers/RepairRecordController";
 const app = new Elysia()
 .use(jwt({
   name:'jwt',
@@ -29,6 +29,9 @@ const app = new Elysia()
 .put("/api/device/update/:id",DeviceController.update)
 .delete("/api/device/remove/:id",DeviceController.remove)
 
+
+.get("/api/repairRecord/list",RepairRecordController.list)
+.post("/api/repairRecord/create",RepairRecordController.create)
 
 
 //department

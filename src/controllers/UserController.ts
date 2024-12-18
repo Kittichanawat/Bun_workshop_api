@@ -66,6 +66,18 @@ export const UserController = {
                     id: true,
                     username: true,
                     level: true,
+                    section: {
+                        select:{
+                            name: true,
+                            id: true,
+                            department: {
+                                select:{
+                                    name: true,
+                                    id: true,
+                                }
+                            }
+                        }
+                    }
                 },
                 where:{
                     status: "active",
@@ -84,7 +96,7 @@ export const UserController = {
             username:string;
             password:string;
             level:string;
-            sectionId:string
+            sectionId:number;
         }
     }) => {
         try {
